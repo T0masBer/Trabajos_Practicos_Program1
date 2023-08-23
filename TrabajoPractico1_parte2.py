@@ -109,6 +109,25 @@ print('El precio final a pagar es de: ',precio_final)
 
 #Ejercicio10
 
+def calcular_calificacion_final(calificaciones_parciales, calificacion_examen_final, calificacion_trabajo_final):
+    promedio_parciales = sum(calificaciones_parciales) / len(calificaciones_parciales)
+    calificacion_final = 0.55 * promedio_parciales + 0.30 * calificacion_examen_final + 0.15 * calificacion_trabajo_final
+    return calificacion_final
+
+try:
+    calificaciones_parciales = []
+    for i in range(3):
+        calificacion_parcial = float(input(f"Ingrese la calificación del parcial {i + 1}: "))
+        calificaciones_parciales.append(calificacion_parcial)
+    
+    calificacion_examen_final = float(input("Ingrese la calificación del examen final: "))
+    calificacion_trabajo_final = float(input("Ingrese la calificación del trabajo final: "))
+    
+    calificacion_final = calcular_calificacion_final(calificaciones_parciales, calificacion_examen_final, calificacion_trabajo_final)
+    print(f"La calificación final del alumno en la materia de Algoritmos es: {calificacion_final:.2f}")
+except ValueError:
+    print("Por favor, ingrese valores numéricos válidos.")
+
 #Ejercicio11
 
 print('Ingrese 2 numeros para saber la distancia entre ellos')
@@ -197,6 +216,15 @@ print(f'Naciste el {dia}/{mes}/{anio}')
 
 #Ejercicio20
 
+fecha_str = input("Ingrese su fecha de nacimiento en formato DDMMAAAA: ")
+
+fecha_dict = {
+    "dia": int(fecha_str[0:2]),
+    "mes": int(fecha_str[2:4]),
+    "anio": int(fecha_str[4:8])
+}
+
+print(f"Su fecha de nacimiento es: {fecha_dict['dia']:02d}/{fecha_dict['mes']:02d}/{fecha_dict['anio']:04d}")
 
 
 
