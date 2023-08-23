@@ -226,7 +226,22 @@ fecha_dict = {
 
 print(f"Su fecha de nacimiento es: {fecha_dict['dia']:02d}/{fecha_dict['mes']:02d}/{fecha_dict['anio']:04d}")
 
+#Ejercicio21
 
+def calcular_tanques_combustible(km_por_litro, capacidad_tanque, km_totales):
+    km_por_tanque = km_por_litro * capacidad_tanque
+    tanques_necesarios = km_totales / km_por_tanque
+    return tanques_necesarios
+
+try:
+    km_por_litro = float(input("Ingrese cuántos kilómetros puede recorrer su moto con 1 litro de combustible: "))
+    capacidad_tanque = float(input("Ingrese la capacidad del tanque en litros: "))
+    km_totales = float(input("Ingrese cuántos kilómetros recorrerán en total: "))
+    
+    tanques_necesarios = calcular_tanques_combustible(km_por_litro, capacidad_tanque, km_totales)
+    print(f"Para el viaje de {km_totales:.2f} kilómetros, se necesitarán {tanques_necesarios:.2f} tanques de combustible.")
+except ValueError:
+    print("Por favor, ingrese valores numéricos válidos.")
 
 
 
