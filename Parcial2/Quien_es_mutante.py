@@ -1,9 +1,12 @@
 from FuncionesP import *
-'''Mi programa es puras funciones
- cosa de que en el programa principal solo te tenga 
- que llamar la funcion principal de este y nada mas'''
 
-
-print("A continuacion se le pedira ingresar una secuencia de ADN en una matriz 6x6 para saber si es mutante o no.")
-
-main()
+while True:
+    print('A continuacion se le pedira ingresar una secuencia de ADN para saber si es mutante')
+    main()
+    try:
+        aux = int(input(
+            'Si desea salir ingrese 0, para continuar ingrese cualquier otro numero: '))
+        if aux == 0:
+            break  # Salir del bucle si el usuario ingresa 0
+    except ValueError:
+        print('Entrada no válida. Por favor, ingrese 0 para salir o cualquier otro número para continuar.')
